@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friends List</h1>
+
+
+<div id="friends">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Twitter</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @friends.each do |friend,| %>
+    <tr>
+      <th scope="row"><%= friend.id%></th>
+      <td><%= friend.first_name %></td>
+      <td><%= friend.last_name %></td>
+      <td><%= friend.email %></td>
+      <td> <%= friend.phone %></td>
+      <td><%= friend.twitter %></td>
+      <td><%= link_to "Details", friend %>
+       </td>
+    </tr>
+      <% end %>
+    </tbody>
+</table>
+</div>
+
+<%= link_to "New friend", new_friend_path, class:'btn btn-primary' %>
